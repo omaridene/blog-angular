@@ -1,0 +1,18 @@
+<li [ngClass]="{'list-group-item': true,
+'list-group-item-success': loveit >= 0,
+'list-group-item-danger': loveit < 0}"
+style="display: flex;flex-direction: column">
+
+
+  <div>
+
+    <div style="float: left"><h1 [ngStyle]="{color: getColor()}">{{ title }} </h1></div>
+    <div style="float: right"> <h4 style="color: black">{{date | date :'short'}}</h4></div>
+  </div>
+
+<div >
+  <p [ngStyle]="{color: getColor()}">{{content}}</p>
+<button class="btn btn-success" (click)="like()">Love it !!</button>
+<button class="btn btn-danger" (click)="dislike()">Don't love it !!</button>
+</div>
+</li>
